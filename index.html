@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srika Financial Services | Business Loans & MSME Finance | Coimbatore</title>
+<meta name="description" content="Srika Financial Services — Trusted MSME lending partner in Coimbatore. Business loans, machinery finance and working capital solutions with quick approval.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+:root {
+  --ink:       #0f1923;
+  --ink-mid:   #2c3e50;
+  --ink-soft:  #5a6a7a;
+  --ink-faint: #8a99a8;
+  --rule:      #e2e6ea;
+  --bg:        #ffffff;
+  --bg-warm:   #f7f5f2;
+  --bg-dark:   #0f1923;
+  --accent:    #b8966e;
+  --accent-dk: #9a7a58;
+  --green:     #25D366;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Jost', sans-serif;
+}
+
+body { font-family: var(--sans); background: var(--bg); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* ─── MOBILE CTA BAR ─── */
+.mobile-bar {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  background: var(--ink);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.mobile-bar a {
+  flex: 1; padding: 13px 8px; text-align: center;
+  font-family: var(--sans); font-size: 13px; font-weight: 500;
+  text-decoration: none; color: white; letter-spacing: 0.3px;
+}
+.mobile-bar a.wa  { background: var(--green); }
+.mobile-bar a.cl  { background: var(--accent); color: var(--ink); }
+.mobile-bar a.ap  { border-left: 1px solid rgba(255,255,255,0.1); }
+
+/* ─── NAV ─── */
+header {
+  position: sticky; top: 0; z-index: 800;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+}
+nav {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 40px;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 14px;
+  text-decoration: none;
+}
+.nav-mark {
+  width: 38px; height: 38px;
+  border: 1.5px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  color: var(--accent); letter-spacing: 1px;
+  flex-shrink: 0;
+}
+.nav-name {
+  display: flex; flex-direction: column; line-height: 1;
+}
+.nav-name strong {
+  font-family: var(--serif); font-size: 17px; font-weight: 600;
+  color: var(--ink); letter-spacing: 0.2px;
+}
+.nav-name span {
+  font-size: 11px; font-weight: 400; color: var(--ink-faint);
+  letter-spacing: 1px; text-transform: uppercase; margin-top: 3px;
+}
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: var(--ink-soft);
+  text-decoration: none; letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links .cta-link {
+  background: var(--ink); color: white !important;
+  padding: 9px 22px; font-size: 12px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  transition: background 0.2s !important;
+}
+.nav-links .cta-link:hover { background: var(--accent) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 22px; height: 1.5px; background: var(--ink); display: block; transition: 0.3s; }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--bg-dark);
+  padding: 100px 40px 110px;
+  position: relative; overflow: hidden;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 420px; gap: 80px;
+  align-items: center;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 28px;
+}
+.hero-eyebrow::before {
+  content: ''; width: 32px; height: 1px; background: var(--accent);
+}
+.hero-eyebrow span {
+  font-size: 11px; font-weight: 500; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--accent);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 600; line-height: 1.12;
+  color: white; margin-bottom: 24px;
+  animation: rise 0.8s ease both;
+}
+.hero h1 i { font-style: italic; color: var(--accent); }
+.hero-desc {
+  font-size: 16px; line-height: 1.75;
+  color: rgba(255,255,255,0.5); font-weight: 300;
+  max-width: 480px; margin-bottom: 40px;
+  animation: rise 0.8s 0.1s ease both;
+}
+.hero-pills {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 44px;
+  animation: rise 0.8s 0.2s ease both;
+}
+.pill {
+  padding: 7px 16px; border: 1px solid rgba(255,255,255,0.12);
+  font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.6);
+  letter-spacing: 0.3px;
+}
+.hero-actions {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  animation: rise 0.8s 0.3s ease both;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px; font-family: var(--sans);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.8px;
+  text-transform: uppercase; text-decoration: none;
+  transition: all 0.25s; cursor: pointer; border: none;
+}
+.btn-gold  { background: var(--accent); color: white; }
+.btn-gold:hover  { background: var(--accent-dk); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.2); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn-wa    { background: var(--green); color: white; }
+.btn-wa:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.btn-dark  { background: var(--ink); color: white; }
+.btn-dark:hover { background: var(--accent); }
+
+/* hero panel */
+.hero-panel {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 40px 36px;
+  animation: rise 0.9s 0.2s ease both;
+}
+.hero-panel h3 {
+  font-family: var(--serif); font-size: 20px; font-weight: 500;
+  color: var(--accent); margin-bottom: 28px;
+  padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.panel-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); margin-bottom: 28px; }
+.panel-stat {
+  background: rgba(255,255,255,0.03);
+  padding: 22px 18px;
+  text-align: center;
+}
+.panel-stat .n {
+  font-family: var(--serif); font-size: 34px; font-weight: 600;
+  color: white; line-height: 1; margin-bottom: 6px;
+}
+.panel-stat .l { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.5px; line-height: 1.4; }
+.panel-wa {
+  display: block; width: 100%;
+  background: var(--green); color: white;
+  padding: 14px; text-align: center;
+  font-family: var(--sans); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase; text-decoration: none;
+  transition: filter 0.2s;
+  margin-bottom: 8px;
+}
+.panel-wa:hover { filter: brightness(1.08); }
+.panel-note { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; letter-spacing: 0.3px; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── STRIP ─── */
+.strip {
+  background: var(--accent);
+  padding: 18px 40px;
+}
+.strip-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.strip-text {
+  font-family: var(--serif); font-size: 19px; font-weight: 500;
+  color: white; letter-spacing: 0.2px;
+}
+.strip-text span { font-style: italic; }
+.strip a {
+  padding: 10px 26px; background: white; color: var(--accent);
+  font-size: 12px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; text-decoration: none; white-space: nowrap;
+  transition: all 0.2s;
+}
+.strip a:hover { background: var(--ink); color: white; }
+
+/* ─── SECTIONS ─── */
+.section { padding: 96px 40px; }
+.container { max-width: 1200px; margin: 0 auto; }
+
+.label {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 16px;
+}
+.label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+.label span {
+  font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--accent);
+}
+h2.title {
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.5vw, 46px);
+  font-weight: 600; line-height: 1.15;
+  color: var(--ink); margin-bottom: 16px;
+}
+h2.title.light { color: white; }
+.subtitle {
+  font-size: 16px; color: var(--ink-soft); line-height: 1.75;
+  font-weight: 300; max-width: 540px;
+}
+.subtitle.light { color: rgba(255,255,255,0.5); }
+.head { margin-bottom: 60px; }
+
+/* ─── LOANS ─── */
+.loans-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.loan-card {
+  background: var(--bg); padding: 44px 36px;
+  transition: all 0.3s; position: relative; overflow: hidden;
+}
+.loan-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.loan-card:hover { background: var(--bg-warm); }
+.loan-card:hover::after { transform: scaleX(1); }
+.loan-num {
+  font-family: var(--serif); font-size: 48px; font-weight: 400;
+  color: var(--rule); line-height: 1; margin-bottom: 24px;
+  transition: color 0.3s;
+}
+.loan-card:hover .loan-num { color: var(--accent); }
+.loan-card h3 {
+  font-family: var(--serif); font-size: 22px; font-weight: 600;
+  color: var(--ink); margin-bottom: 12px;
+}
+.loan-card p {
+  font-size: 14px; color: var(--ink-soft); line-height: 1.75;
+  font-weight: 300; margin-bottom: 28px;
+}
+.loan-table { width: 100%; margin-bottom: 24px; }
+.loan-table tr { border-bottom: 1px solid var(--rule); }
+.loan-table tr:last-child { border-bottom: none; }
+.loan-table td { padding: 9px 0; font-size: 13px; }
+.loan-table td:first-child { color: var(--ink-faint); font-weight: 400; }
+.loan-table td:last-child { color: var(--ink); font-weight: 600; text-align: right; }
+.loan-tag {
+  font-size: 12px; color: var(--accent); font-weight: 500;
+  letter-spacing: 0.3px; line-height: 1.6; margin-bottom: 24px;
+}
+.loan-link {
+  font-size: 12px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--ink); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+  transition: color 0.2s; padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+.loan-link::after { content: '→'; transition: transform 0.2s; }
+.loan-link:hover { color: var(--accent); }
+.loan-link:hover::after { transform: translateX(4px); }
+
+/* ─── PROCESS ─── */
+.process-bg { background: var(--bg-dark); }
+.process-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 0; position: relative;
+}
+.process-line {
+  position: absolute; top: 28px; left: calc(100%/6);
+  right: calc(100%/6); height: 1px;
+  background: linear-gradient(90deg, var(--accent), rgba(184,150,110,0.2), var(--accent));
+}
+.process-step { padding: 0 40px; }
+.step-idx {
+  width: 56px; height: 56px;
+  border: 1px solid rgba(184,150,110,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 22px; font-weight: 600;
+  color: var(--accent); margin-bottom: 28px; position: relative; z-index: 1;
+  background: var(--bg-dark);
+}
+.process-step h3 {
+  font-family: var(--serif); font-size: 20px; font-weight: 600;
+  color: white; margin-bottom: 12px;
+}
+.process-step p {
+  font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.75; font-weight: 300;
+}
+
+/* ─── WHY ─── */
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.why-list { display: flex; flex-direction: column; gap: 0; }
+.why-row {
+  display: flex; gap: 24px; padding: 28px 0;
+  border-bottom: 1px solid var(--rule); align-items: flex-start;
+}
+.why-row:first-child { border-top: 1px solid var(--rule); }
+.why-row-num {
+  font-family: var(--serif); font-size: 13px; font-weight: 600;
+  color: var(--accent); min-width: 28px; padding-top: 2px;
+}
+.why-row h4 {
+  font-size: 15px; font-weight: 600; color: var(--ink);
+  margin-bottom: 5px; letter-spacing: 0.2px;
+}
+.why-row p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; font-weight: 300; }
+.why-aside {
+  background: var(--bg-warm); padding: 48px 40px;
+  border-top: 3px solid var(--accent);
+}
+.why-aside h3 {
+  font-family: var(--serif); font-size: 26px; font-weight: 600;
+  color: var(--ink); margin-bottom: 8px;
+}
+.why-aside p {
+  font-size: 14px; color: var(--ink-soft); line-height: 1.7;
+  font-weight: 300; margin-bottom: 32px;
+}
+.aside-actions { display: flex; flex-direction: column; gap: 12px; }
+.aside-actions a {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 15px 20px; text-decoration: none; font-size: 13px;
+  font-weight: 600; letter-spacing: 0.5px; transition: all 0.2s;
+}
+.aside-actions a::after { content: '→'; font-size: 16px; }
+.aside-wa  { background: var(--green); color: white; }
+.aside-wa:hover  { filter: brightness(1.08); }
+.aside-call { background: var(--ink); color: white; }
+.aside-call:hover { background: var(--accent); }
+.aside-note { font-size: 11px; color: var(--ink-faint); margin-top: 10px; letter-spacing: 0.3px; }
+
+/* ─── INDUSTRIES ─── */
+.ind-bg { background: var(--bg-warm); }
+.ind-grid {
+  display: grid; grid-template-columns: repeat(2,1fr);
+  gap: 1px; background: var(--rule); border: 1px solid var(--rule);
+}
+.ind-cell {
+  background: var(--bg-warm); padding: 40px 36px;
+  transition: background 0.2s;
+}
+.ind-cell:hover { background: white; }
+.ind-icon {
+  font-size: 28px; margin-bottom: 18px; display: block;
+  filter: grayscale(30%);
+}
+.ind-cell h3 {
+  font-family: var(--serif); font-size: 20px; font-weight: 600;
+  color: var(--ink); margin-bottom: 10px;
+}
+.ind-cell p {
+  font-size: 14px; color: var(--ink-soft); line-height: 1.75; font-weight: 300;
+}
+
+/* ─── FAQ ─── */
+.faq-wrap { max-width: 720px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--rule); }
+.faq-q {
+  width: 100%; background: none; border: none;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0; cursor: pointer; text-align: left; gap: 20px;
+}
+.faq-q span {
+  font-size: 15px; font-weight: 500; color: var(--ink); line-height: 1.4;
+}
+.faq-icon {
+  width: 28px; height: 28px; border: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--ink-soft); flex-shrink: 0;
+  transition: all 0.25s;
+}
+.faq-item.open .faq-icon { background: var(--accent); border-color: var(--accent); color: white; transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  font-size: 14px; color: var(--ink-soft); line-height: 1.75; font-weight: 300;
+  transition: max-height 0.35s ease, padding 0.35s;
+}
+.faq-item.open .faq-a { max-height: 160px; padding-bottom: 22px; }
+
+/* ─── CONTACT ─── */
+.contact-bg { background: var(--bg-dark); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.contact-detail {
+  display: flex; gap: 20px; padding: 24px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.contact-detail:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+.contact-dkey {
+  min-width: 80px; font-size: 10px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent); padding-top: 2px;
+}
+.contact-dval {
+  font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; font-weight: 300;
+}
+.contact-dval a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+.contact-dval a:hover { color: var(--accent); }
+.contact-actions { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.contact-btn {
+  display: flex; align-items: center; gap: 16px; padding: 18px 24px;
+  text-decoration: none; transition: all 0.2s;
+}
+.contact-btn-icon { font-size: 20px; }
+.contact-btn-body { display: flex; flex-direction: column; line-height: 1.3; }
+.contact-btn-body strong { font-size: 14px; font-weight: 600; }
+.contact-btn-body small { font-size: 12px; opacity: 0.65; font-weight: 300; }
+.cbtn-wa   { background: var(--green); color: white; }
+.cbtn-wa:hover   { filter: brightness(1.08); }
+.cbtn-call { background: var(--accent); color: white; }
+.cbtn-call:hover { background: var(--accent-dk); }
+.cbtn-form { background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); }
+.cbtn-form:hover { border-color: var(--accent); }
+.map-wrap { border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #080f18; padding: 40px 40px 90px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 20px;
+}
+.footer-brand {
+  font-family: var(--serif); font-size: 16px; font-weight: 600;
+  color: rgba(255,255,255,0.5);
+}
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a {
+  font-size: 12px; color: rgba(255,255,255,0.3); text-decoration: none;
+  letter-spacing: 0.3px; transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--accent); }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 0.3px; width: 100%; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 68px; left: 0; right: 0; bottom: 0;
+    background: var(--bg); padding: 40px; gap: 28px;
+    border-top: 1px solid var(--rule);
+  }
+  .nav-links.open a { font-size: 15px; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-panel { display: none; }
+  .hero { padding: 72px 24px 80px; }
+  .loans-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; gap: 40px; }
+  .process-line { display: none; }
+  .process-step { padding: 0; }
+  .why-grid { grid-template-columns: 1fr; gap: 48px; }
+  .ind-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .section { padding: 72px 24px; }
+  nav { padding: 0 24px; }
+  .strip { padding: 18px 24px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  footer { padding: 36px 24px 100px; }
+  .mobile-bar { display: flex; }
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE BAR -->
+<div class="mobile-bar">
+  <a href="https://wa.me/917358055684?text=Hi%20I%20am%20looking%20for%20a%20business%20loan" class="wa">💬 WhatsApp</a>
+  <a href="tel:+917358055684" class="cl">📞 Call</a>
+  <a href="https://forms.gle/chLco3erN8TQxvpV6" target="_blank" class="ap">Apply Now</a>
+</div>
+
+<!-- NAV -->
+<header>
+  <nav>
+    <a href="#" class="nav-brand">
+      <div class="nav-mark">S</div>
+      <div class="nav-name">
+        <strong>Srika Financial Services</strong>
+        <span>Coimbatore · Est. 2004</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#loans">Products</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#why">About</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="cta-link">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span>Trusted MSME Lending Partner · Tamil Nadu</span></div>
+      <h1>Business Finance,<br><i>Approved in 48 Hours.</i><br>No Bank Queues.</h1>
+      <p class="hero-desc">Helping manufacturers, healthcare institutions and growing enterprises access fast, fair funding — directly, without middlemen, with minimal paperwork.</p>
+      <div class="hero-pills">
+        <span class="pill">Quick Approval</span>
+        <span class="pill">Minimal Documentation</span>
+        <span class="pill">Direct Lending</span>
+        <span class="pill">Competitive Rates</span>
+      </div>
+      <div class="hero-actions">
+        <a href="https://wa.me/917358055684?text=Hi%20I%20am%20looking%20for%20a%20business%20loan" class="btn btn-wa">WhatsApp Us</a>
+        <a href="tel:+917358055684" class="btn btn-gold">Call Now</a>
+        <a href="https://forms.gle/chLco3erN8TQxvpV6" target="_blank" class="btn btn-ghost">Apply Online</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <h3>At a Glance</h3>
+      <div class="panel-stats">
+        <div class="panel-stat"><div class="n">20+</div><div class="l">Years of<br>Experience</div></div>
+        <div class="panel-stat"><div class="n">48h</div><div class="l">Loan Approval<br>Time</div></div>
+        <div class="panel-stat"><div class="n">₹2Cr</div><div class="l">Maximum<br>Loan Amount</div></div>
+        <div class="panel-stat"><div class="n">0</div><div class="l">Middle-<br>men</div></div>
+      </div>
+      <a href="https://wa.me/917358055684?text=Hi%20I%20am%20looking%20for%20a%20business%20loan" class="panel-wa">WhatsApp Us Now</a>
+      <p class="panel-note">Usually replies within 1 hour</p>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-text">One call is all it takes. <span>Reach out today.</span></div>
+    <a href="tel:+917358055684">+91-7358055684</a>
+  </div>
+</div>
+
+<!-- LOANS -->
+<section class="section" id="loans">
+  <div class="container">
+    <div class="head">
+      <div class="label"><span>Loan Products</span></div>
+      <h2 class="title">Financing Solutions<br>Built for Business</h2>
+      <p class="subtitle">From day-to-day cash flow to large capital investments — the right loan for every business need.</p>
+    </div>
+    <div class="loans-grid">
+
+      <div class="loan-card">
+        <div class="loan-num">01</div>
+        <h3>Business Loans</h3>
+        <p>Flexible funding for expansion, working expenses and growth opportunities. Designed for small-scale and cottage industries ready to scale.</p>
+        <table class="loan-table">
+          <tr><td>Loan Amount</td><td>₹5 Lakhs – ₹2 Crore</td></tr>
+          <tr><td>Tenure</td><td>12 – 60 Months</td></tr>
+          <tr><td>Approval</td><td>Within 48 Hours</td></tr>
+        </table>
+        <p class="loan-tag">Ideal for shop owners, traders, small manufacturers & service businesses</p>
+        <a href="https://wa.me/917358055684?text=Hi%20I%20am%20interested%20in%20a%20Business%20Loan" class="loan-link">Enquire Now</a>
+      </div>
+
+      <div class="loan-card">
+        <div class="loan-num">02</div>
+        <h3>Machinery Loans</h3>
+        <p>Finance for purchasing machinery, tools and equipment to improve productivity. Upgrade or expand production capacity without financial stress.</p>
+        <table class="loan-table">
+          <tr><td>Loan Amount</td><td>₹2 Lakhs – ₹1 Crore</td></tr>
+          <tr><td>Tenure</td><td>12 – 48 Months</td></tr>
+          <tr><td>Approval</td><td>Within 48 Hours</td></tr>
+        </table>
+        <p class="loan-tag">Ideal for factory owners, workshops, printing & fabrication units</p>
+        <a href="https://wa.me/917358055684?text=Hi%20I%20am%20interested%20in%20a%20Machinery%20Loan" class="loan-link">Enquire Now</a>
+      </div>
+
+      <div class="loan-card">
+        <div class="loan-num">03</div>
+        <h3>Working Capital Finance</h3>
+        <p>Short-term funding for raw materials, salaries and operational costs. Maintain smooth cash flow during delayed payments or seasonal demand.</p>
+        <table class="loan-table">
+          <tr><td>Loan Amount</td><td>₹1 Lakh – ₹50 Lakhs</td></tr>
+          <tr><td>Tenure</td><td>6 – 24 Months</td></tr>
+          <tr><td>Approval</td><td>Within 48 Hours</td></tr>
+        </table>
+        <p class="loan-tag">Ideal for businesses with seasonal demand, delayed payments or growing order books</p>
+        <a href="https://wa.me/917358055684?text=Hi%20I%20am%20interested%20in%20Working%20Capital%20Finance" class="loan-link">Enquire Now</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-bg" id="process">
+  <div class="container">
+    <div class="head" style="text-align:center">
+      <div class="label" style="justify-content:center"><span>How It Works</span></div>
+      <h2 class="title light">Three Steps to Funding</h2>
+      <p class="subtitle light" style="margin:0 auto">A process built around your time, not ours.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-line"></div>
+      <div class="process-step">
+        <div class="step-idx">01</div>
+        <h3>Apply</h3>
+        <p>WhatsApp or call us with your business details — type of business, loan amount needed and purpose. No forms, no queues.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-idx">02</div>
+        <h3>We Call You</h3>
+        <p>Our team contacts you within 24 hours to understand your requirement and advise on the minimal documents required.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-idx">03</div>
+        <h3>Loan Disbursed</h3>
+        <p>Once approved, funds are transferred directly to your account — without unnecessary delays or hidden procedures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <div class="label"><span>Why Choose Us</span></div>
+        <h2 class="title">Straightforward Finance<br>for Serious Businesses</h2>
+        <p style="font-size:15px;color:var(--ink-soft);line-height:1.75;font-weight:300;margin-bottom:40px">At Srika Financial Services, we believe every business deserves fast, fair funding — without the delays and paperwork that banks impose.</p>
+        <div class="why-list">
+          <div class="why-row">
+            <div class="why-row-num">01</div>
+            <div>
+              <h4>20+ Years of Experience</h4>
+              <p>Two decades supporting MSMEs and businesses across Tamil Nadu with the right funding at the right time.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-row-num">02</div>
+            <div>
+              <h4>Fast Approval & Disbursement</h4>
+              <p>Most loans approved within 48 hours of document submission. No long waiting periods.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-row-num">03</div>
+            <div>
+              <h4>Direct Lending — No Middlemen</h4>
+              <p>You deal directly with us. No agents, no hidden charges, no unnecessary intermediaries.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-row-num">04</div>
+            <div>
+              <h4>Minimal Documentation</h4>
+              <p>We have simplified the process to require only the essentials — respecting your time and effort.</p>
+            </div>
+          </div>
+          <div class="why-row">
+            <div class="why-row-num">05</div>
+            <div>
+              <h4>Personalised Support</h4>
+              <p>Every business is different. We tailor loan solutions to your specific needs and situation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-aside">
+        <h3>Ready to Get Started?</h3>
+        <p>One conversation is all it takes to understand your options. No commitment required.</p>
+        <div class="aside-actions">
+          <a href="https://wa.me/917358055684?text=Hi%20I%20am%20looking%20for%20a%20business%20loan" class="aside-wa">WhatsApp Us Now</a>
+          <a href="tel:+917358055684" class="aside-call">Call +91-7358055684</a>
+        </div>
+        <p class="aside-note">Usually replies within 1 hour · Mon–Sat 9am–6pm</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section ind-bg" id="industries">
+  <div class="container">
+    <div class="head">
+      <div class="label"><span>Industries We Serve</span></div>
+      <h2 class="title">Industry-Specific<br>Financial Solutions</h2>
+      <p class="subtitle">Over 20 years of tailored funding solutions designed for the unique needs of each sector.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-cell">
+        <span class="ind-icon">🏭</span>
+        <h3>Manufacturing & Small Industries</h3>
+        <p>From raw material procurement to machinery upgrades — quick funding that keeps your production cycle uninterrupted.</p>
+      </div>
+      <div class="ind-cell">
+        <span class="ind-icon">🏥</span>
+        <h3>Healthcare Institutions</h3>
+        <p>Setting up a clinic, buying medical equipment or expanding your hospital — flexible loans designed for healthcare professionals.</p>
+      </div>
+      <div class="ind-cell">
+        <span class="ind-icon">🏢</span>
+        <h3>SMEs & Growing Enterprises</h3>
+        <p>Seize opportunities fast. Our working capital and business loans move at the speed your business demands.</p>
+      </div>
+      <div class="ind-cell">
+        <span class="ind-icon">📊</span>
+        <h3>Chartered Accountants & Professionals</h3>
+        <p>Partner with us to provide your clients priority loan access. We handle the finance so you can focus on your practice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="head" style="text-align:center">
+      <div class="label" style="justify-content:center"><span>FAQ</span></div>
+      <h2 class="title">Common Questions</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Do I need IT returns to apply?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a">Not always. We evaluate each case individually and work with minimal documentation. Many clients are approved without a full IT return history.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>What is the minimum business age required?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a">Generally 1–2 years of business operation, but we consider each case flexibly. We understand every business journey is different.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>How long does loan approval take?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a">We typically approve within 48–72 hours of receiving complete documents. Once approved, disbursement happens quickly without unnecessary delays.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Is collateral required?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a">It depends on the loan type and amount. Many of our products are available with minimal or no collateral. Contact us to discuss your specific situation.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>Which cities do you serve?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a">We primarily serve Coimbatore and surrounding districts including Tiruppur, Erode, and Salem across Tamil Nadu.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)"><span>What is the difference between a Working Capital Loan and a Business Loan?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a">Working Capital Loans are short-term (6–24 months) for daily operational expenses. Business Loans are longer-term (1–5 years) for growth, expansion and capital investment. Not sure which suits you? WhatsApp us and we will guide you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-bg" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="label"><span>Contact</span></div>
+        <h2 class="title light">Get in Touch</h2>
+        <p class="subtitle light" style="margin-bottom:48px">We have helped hundreds of business owners across Tamil Nadu access the funding they needed — quickly, fairly and without unnecessary stress.</p>
+        <div>
+          <div class="contact-detail">
+            <div class="contact-dkey">Address</div>
+            <div class="contact-dval">85, Poonga Complex, Near Ramakrishna Hospital,<br>PN Palayam Road, New Siddhapudur,<br>Coimbatore – 641044, Tamil Nadu</div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-dkey">Phone</div>
+            <div class="contact-dval"><a href="tel:+917358055684">+91-7358055684</a></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-dkey">Email</div>
+            <div class="contact-dval"><a href="mailto:gopalkris050@gmail.com">gopalkris050@gmail.com</a></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-dkey">Hours</div>
+            <div class="contact-dval">Monday – Saturday, 9:00 AM – 6:00 PM</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-actions">
+          <a href="https://wa.me/917358055684?text=Hi%20I%20am%20looking%20for%20a%20business%20loan" class="contact-btn cbtn-wa">
+            <span class="contact-btn-icon">💬</span>
+            <span class="contact-btn-body"><strong>WhatsApp Us</strong><small>Usually replies within 1 hour</small></span>
+          </a>
+          <a href="tel:+917358055684" class="contact-btn cbtn-call">
+            <span class="contact-btn-icon">📞</span>
+            <span class="contact-btn-body"><strong>Call Directly</strong><small>+91-7358055684</small></span>
+          </a>
+          <a href="https://forms.gle/chLco3erN8TQxvpV6" target="_blank" class="contact-btn cbtn-form">
+            <span class="contact-btn-icon">📋</span>
+            <span class="contact-btn-body"><strong>Apply Online</strong><small>Fill our simple loan application form</small></span>
+          </a>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://maps-api-ssl.google.com/maps?hl=en-US&ll=11.019657,76.978537&output=embed&q=11.019669,76.978482&z=17"
+            width="100%" height="240" style="border:0;display:block" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Srika Financial Services</div>
+    <div class="footer-links">
+      <a href="#loans">Products</a>
+      <a href="#process">Process</a>
+      <a href="#industries">Industries</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="footer-copy">© 2024 Srika Financial Services. All rights reserved. Coimbatore, Tamil Nadu.</p>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!open) item.classList.add('open');
+}
+</script>
+</body>
+</html>
